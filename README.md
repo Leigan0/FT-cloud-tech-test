@@ -37,4 +37,13 @@ MVP
 * Homepage with form to enter rating
 * Data (rating) persisted
 
-I am using Express for my app routing. I will use mocha and chai for the testing framework.
+I am using Express for my app routing.
+
+Testing
+Supertest: Allows me to test API
+Mocha: Test framework that runs in the browser and on Node.js
+Chai: Allows should, expect and asserts matchers
+
+I have completed unit test for express, I have pulled server.listen out to serverStart
+so I do not have to set a port for testing, supertest will deal with this. This also ensures server
+closed between tests and does not cause server in use errors.

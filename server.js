@@ -1,9 +1,15 @@
-var express = require("express");
+var express = require('express');
+const apiRouter = require('./api');
+const server  = express();
+var port = process.env.port || 3000;
 
-const server = express();
+server.use('/', apiRouter);
 
-server.get('/', function(req, res){
-    res.send('test');
-})
+server.use(function(req, res){
+  res.status(404).send({url: req.originalUrl + ' not found'});
+});
 
-server.listen(3000);
+module.exports = {
+  server,
+  port
+};
