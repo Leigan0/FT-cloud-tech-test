@@ -50,3 +50,5 @@ closed between tests and does not cause server in use errors.
 
 I have added eslint, and configured this to run pretest script. This has been automated to a degree
 as linter will now run before tests - tests will not run until eslint has no errors.
+I have also updated git hooks, pre-commit sample file to run npm pretest at each commit.
+To automate linting and tests prior to each commit.

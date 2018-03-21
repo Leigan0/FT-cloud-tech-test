@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore .",
     "start": "nodemon serverStart.js",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec"
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec",
+    "coverage": "istanbul cover _mocha -- -R spec"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "eslint": "^4.19.0",
+    "istanbul": "^0.4.5",
     "supertest": "^3.0.0"
   }
 }
