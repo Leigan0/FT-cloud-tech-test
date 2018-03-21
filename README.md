@@ -37,4 +37,4 @@ MVP
 * Homepage with form to enter rating
 * Data (rating) persisted
 
-I am using Express for my app routing 
+I am using Express for my app routing. I will use mocha and chai for the testing framework.
