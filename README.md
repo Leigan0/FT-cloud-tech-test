@@ -47,3 +47,6 @@ Chai: Allows should, expect and asserts matchers
 I have completed unit test for express, I have pulled server.listen out to serverStart
 so I do not have to set a port for testing, supertest will deal with this. This also ensures server
 closed between tests and does not cause server in use errors.
+
+I have added eslint, and configured this to run pretest script. This has been automated to a degree
+as linter will now run before tests - tests will not run until eslint has no errors.
