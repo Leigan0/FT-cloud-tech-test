@@ -1,0 +1,15 @@
+html
+  head
+    title FT ratings
+  body
+    h1 Welcome to Financial Times Website Rater
+    h1 Please rate our website
+
+    body
+    form(action='/ratings/new', method='POST')
+      p
+      | Rating:
+      input(type='text', name='rating', value='')
+      |
+      input(type='submit', value='Submit')
+      |

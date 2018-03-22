@@ -50,5 +50,10 @@ closed between tests and does not cause server in use errors.
 
 I have added eslint, and configured this to run pretest script. This has been automated to a degree
 as linter will now run before tests - tests will not run until eslint has no errors.
-I have also updated git hooks, pre-commit sample file to run npm pretest at each commit.
+I have also updated git hooks, pre-commit file to run npm pretest at each commit.
 To automate linting and tests prior to each commit.
+
+Once I researched a way to ensure linting was ran before each commit, I have also
+updated the git/hooks/pre-commit file to run my npm test script to ensure linting
+and testing is completed prior to every commit. This ensures I cannot commit if tests not passing
+linting errors not resolved.
