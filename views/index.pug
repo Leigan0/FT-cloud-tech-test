@@ -8,6 +8,9 @@ html
     body
     form(action='/ratings/new', method='POST')
       p
+      | Username:
+      input(type='text', name='username', value='')
+      |
       | Rating:
       input(type='text', name='rating', value='')
       |
