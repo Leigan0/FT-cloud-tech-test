@@ -13,86 +13,127 @@
 * Website asks for and stores a simple rating score for using ft
 * Diagram of site architecture show key components
 
-## Optional
+### Optional
 * Templated infrastructure as code
 * Automated testing
 * Origami Components
 * The ability to view the ratings / results
 
-### My approach
+### Usage
 
-I have decided to write this with Javascript/Node as I have some (limited) experience in this language
-and as per the spec this language is commonly used at FT.
+Requirements - Node, and NPM.
 
-I will use heroku to host the website.
+The project requires the use of a database. Prior to running the project you will require a  [mlab](https://mlab.com) account and database. The database connection has been created through environmental variables. To run tests and the app you must first set up a test & development database and run the following commands in the terminal.
 
-My first task will be to build a simple version of the app
+For more information about mlab how to set it up for your own projects visit this [tutorial](https://leigan0.gitbooks.io/team-glow/content/Mongo/Mlab-set-up.html) I wrote about it.
 
-MVP
+```
+export MONGOLAB_URI_TEST='your mlab connection details'
+export MONGODB_URI='your mlab connection details'
+```
+
+* git clone https://github.com/Leigan0/test.git
+* npm install
+* npm start
+* navigate to http://localhost:3000/
+
+Or visit on [Heroku](https://ft-tech-test.herokuapp.com/)
+
+### Technologies used
+
+* Express
+* Node.Js
+* Javascript
+* Pug
+* Heroku
+* Travis
+* Mocha
+* Chai
+* Supertest
+* Istanbul
+
+## My approach
+
+After reading the specifications I came up with the following mvp.
+
+#### MVP
+
 * Homepage with form to enter rating
 * Data (rating) persisted
 * hosted on cloud
+* Diagram of infrastructure
 
-I am using Express for my app routing.
+My initial plan is to make a simple version of the app to meet the above.
 
-Testing
+#### Technology decisions
+
+I have decided to write this with JavaScript/Node as I have some (limited) experience in this language
+and as per the spec this language is commonly used at FT.
+
+I am using Express for my app routing, and Node.js to allow me to use JS in the front and backend.
+
 Supertest: Allows me to test API
 Mocha: Test framework that runs in the browser and on Node.js
 Chai: Allows should, expect and asserts matchers
+Istanbul: Test coverage
 
-I have completed unit test for express, I have pulled server.listen out to serverStart
+I will use Heroku to host the website. I originally intended to use AWS however I have not had time
+to fully understand how to deploy to AWS, so I have used Heroku.
+
+I made the decision to use Heroku due to time pressures, and I also want to be able to implement some level of continuous integration and continuous deployment. As I have some experience in Heroku, using this platform will allow me to look into this further.
+
+Given more time I hope to gain further understanding and deploy to AWS.
+
+#### Testing & Implementation decisions
+
+I have completed unit tests for express routes. I have pulled server.listen out to serverStart
 so I do not have to set a port for testing, supertest will deal with this. This also ensures server
 closed between tests and does not cause server in use errors.
 
 I have added eslint, and configured this to run pretest script. This has been automated to a degree
 as linter will now run before tests - tests will not run until eslint has no errors.
-I have also updated git hooks, pre-commit file to run npm pretest at each commit.
-To automate linting and tests prior to each commit.
 
-Once I researched a way to ensure linting was ran before each commit, I have also
-updated the git/hooks/pre-commit file to run my npm test script to ensure linting
-and testing is completed prior to every commit. This ensures I cannot commit if tests not passing
-linting errors not resolved.
+I have also updated git hooks - pre-commit file to run npm pretest at each commit.
 
-To persist data I have decided to use mongoose / mongodb. No requirement for relational database, so no
-reason to use postgres - have some experience mongoose.
+This runs linting and tests prior to each commit. I have done this to improve code quality and code commits as I cannot commit code with linting errors or failing tests.
 
-Need to set up environment variable MONGOLAB_URI_TEST / MONGOLAB URI and mlab test database
+To persist data I have decided to use mongoose / mongodb, through Mlab platform. No requirement for relational database, so no
+reason to use postgres.
+
 
 I have attempted to isolate my tests as much as possible.
 Test suit saves to a test database which is cleared after test suite runs - may need to look at cleaning between each test
-when testing get methods ( if move onto this)
+when testing GET routes for ratings (if move onto this)
 
-Need add to cloud platform.
 
 I wanted to have CI build so my first step was to build using travis. I have not used this before for node projects
 or projects with mongodb.
 
 Initial attempted failed - could not access mongourl
 
-Attempted to solve this by added urls as environment variables
+Solved this by added encrypted version MONGOLAB_URI_TEST env variable to travis.yml
 
-Attempted deploy to Heroku
-Set up mlab this tutorial
+Attempted deploy to Heroku. Set up mlab this tutorial
 https://devcenter.heroku.com/articles/mongolab
 
-Heroku sets env MONGODB_URI - need to amend across app
+Heroku sets env MONGODB_URI - so amended across app.
 
-app deploys to heroku - https://ft-tech-test.herokuapp.com/
-MVP met
+App deploys to Heroku - https://ft-tech-test.herokuapp.com/
+MVP met.
 
-Degree of automated testing when pushed to git hub - travis ci confirms build passing.
-Unable to commit without tests and linter passing
-Push to heroku autobuild with npm script.
+Whilst automated testing, CI and CD were not part of MVP, I had a objective to achieve this.
 
-To improve automation I have added script to travis.yml file to push to heroku after successful build. App now tested (specs / lint) and deployed on push to git - travis docs to do this.
+To improve automation I have added script to travis.yml file to push to Heroku after successful build. App now tested (specs / lint) and deployed on push to git.
+
 Keys in travis.yml are encrypted by travis
 
-Need to add diagram as part of MVP of task.
+Outstanding required tasks
+
+- Diagram of site architecture
 
 Points to improve
 
-- feature test
-- unit test
+- add feature tests
+- improve unit tests / isolation
 - optional features
 - refactoring?
