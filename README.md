@@ -19,23 +19,17 @@
 
 ### My approach
 
-I have decided to write this with Javascript/Node as I have some experience in this language
+I have decided to write this with Javascript/Node as I have some (limited) experience in this language
 and as per the spec this language is commonly used at FT.
 
-I have used heroku before, but I am interested in learning about new technologies
-so I will aim to host my website in aws as I have not tried this before.
-I also have very little experience in continuous deployment and Automated testing.
-As this relates to the role would help to meet an optional objective I would like to try
-to set up my app with a continuous deployment pipeline (this may be a little ambitious).
-
-To research this I have visted the aws website and found this tutorial.
-https://aws.amazon.com/getting-started/tutorials/continuous-deployment-pipeline/
+I will use heroku to host the website.
 
 My first task will be to build a simple version of the app
 
 MVP
 * Homepage with form to enter rating
 * Data (rating) persisted
+* hosted on cloud
 
 I am using Express for my app routing.
 
@@ -61,4 +55,10 @@ linting errors not resolved.
 To persist data I have decided to use mongoose / mongodb. No requirement for relational database, so no
 reason to use postgres - have some experience mongoose.
 
-Need to set up environment variable MONGOLAB_URI_TEST and mlab test database
+Need to set up environment variable MONGOLAB_URI_TEST / MONGOLAB URI and mlab test database
+
+I have attempted to isolate my tests as much as possible.
+Test suit saves to a test database which is cleared after test suite runs - may need to look at cleaning between each test
+when testing get methods ( if move onto this)
+
+Need add to cloud platform.
