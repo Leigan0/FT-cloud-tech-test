@@ -23,7 +23,7 @@ var getUrl = function(){
   if (process.env.NODE_ENV == 'test') {
     return process.env.MONGOLAB_URI_TEST;
   } else {
-    return process.env.MONGOLAB_URI;
+    return process.env.MONGODB_URI;
   }
 };
 

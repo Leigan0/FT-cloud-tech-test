@@ -69,3 +69,9 @@ or projects with mongodb.
 Initial attempted failed - could not access mongourl
 
 Attempted to solve this by added urls as environment variables
+
+Attempted deploy to Heroku
+Set up mlab this tutorial
+https://devcenter.heroku.com/articles/mongolab
+
+Heroku sets env MONGODB_URI - need to amend across app
