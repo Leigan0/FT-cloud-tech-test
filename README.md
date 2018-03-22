@@ -1,5 +1,7 @@
 # FT Cloud Engineer Technical Exercise
 
+[![Build Status](https://travis-ci.org/Leigan0/test.svg?branch=master)](https://travis-ci.org/Leigan0/test)
+
 ## What FT are looking for
 * Comfortable with code and infrastructure
 * How I solve problems
@@ -75,3 +77,20 @@ Set up mlab this tutorial
 https://devcenter.heroku.com/articles/mongolab
 
 Heroku sets env MONGODB_URI - need to amend across app
+
+app deploys to heroku - https://ft-tech-test.herokuapp.com/
+MVP met
+
+Degree of automated testing when pushed to git hub - travis ci confirms build passing.
+Unable to commit without tests and linter passing
+Push to heroku autobuild with npm script.
+
+Need to add diagram as part of MVP of task.
+
+Points to improve
+
+- feature test
+- unit test
+- optional features
+- refactoring?
+-
