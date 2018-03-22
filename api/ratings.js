@@ -9,7 +9,7 @@ router.post('/new', (req, res) =>{
   });
   data.save()
     .then(rating => {
-      res.json(rating);
+      res.render('rating_confirmation',{username: rating.username, rating: rating.rating} );
     })
     .catch(() =>{
       res.status(400).send('unable to save to database');

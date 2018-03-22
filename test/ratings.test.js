@@ -22,10 +22,28 @@ describe('POST/ratings/new - create new rating', () => {
       .send(testRating)
       .end((err,res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.rating).to.be.a('number');
-        expect(res.body.rating).to.equal(4);
-        expect(res.body.username).to.be.a('string');
-        expect(res.body.username).to.equal('Test123');
+        done();
+      });
+  });
+  it('should redirect to confirmaton page', (done)=> {
+    request(app)
+      .post('/ratings/new')
+      .send(testRating)
+      .expect('Location', '/ratings')
+      .end(() => {
+        done();
+      });
+  });
+  it('should confirm rating added with username and rating', (done)=> {
+    request(app)
+      .post('/ratings/new')
+      .send(testRating)
+      .expect('Location', '/ratings')
+      .end((err, res) => {
+        expect(res.text).to.include('Thank you for submitting your review');
+        expect(res.text).to.include('Test123');
+        expect(res.text).to.include('You rated us');
+        expect(res.text).to.include('4');
         done();
       });
   });
