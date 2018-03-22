@@ -62,3 +62,10 @@ Test suit saves to a test database which is cleared after test suite runs - may 
 when testing get methods ( if move onto this)
 
 Need add to cloud platform.
+
+I wanted to have CI build so my first step was to build using travis. I have not used this before for node projects
+or projects with mongodb.
+
+Initial attempted failed - could not access mongourl
+
+Attempted to solve this by added urls as environment variables
