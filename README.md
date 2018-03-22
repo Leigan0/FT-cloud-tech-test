@@ -21,7 +21,9 @@
 
 ### Usage
 
-Requirements - Node, and NPM.
+** Requirements to run **
+ - Node
+ - NPM
 
 The project requires the use of a database. Prior to running the project you will require a  [mlab](https://mlab.com) account and database. The database connection has been created through environmental variables. To run tests and the app you must first set up a test & development database and run the following commands in the terminal.
 
@@ -33,9 +35,16 @@ export MONGODB_URI='your mlab connection details'
 ```
 
 * git clone https://github.com/Leigan0/test.git
+* cd to directory
 * npm install
 * npm start
 * navigate to http://localhost:3000/
+
+To run tests
+- npm test
+
+To check test coverage
+- npm run coverage
 
 Or visit on [Heroku](https://ft-tech-test.herokuapp.com/)
 
@@ -73,8 +82,11 @@ and as per the spec this language is commonly used at FT.
 I am using Express for my app routing, and Node.js to allow me to use JS in the front and backend.
 
 Supertest: Allows me to test API
+
 Mocha: Test framework that runs in the browser and on Node.js
+
 Chai: Allows should, expect and asserts matchers
+
 Istanbul: Test coverage
 
 I will use Heroku to host the website. I originally intended to use AWS however I have not had time
@@ -82,18 +94,18 @@ to fully understand how to deploy to AWS, so I have used Heroku.
 
 I made the decision to use Heroku due to time pressures, and I also want to be able to implement some level of continuous integration and continuous deployment. As I have some experience in Heroku, using this platform will allow me to look into this further.
 
-Given more time I hope to gain further understanding and deploy to AWS.
+Given more time I would gain further understanding and deploy to AWS.
 
 #### Testing & Implementation decisions
 
 I have completed unit tests for express routes. I have pulled server.listen out to serverStart
-so I do not have to set a port for testing, supertest will deal with this. This also ensures server
+so I do not have to set a port for testing, supertest will deal with this. This also ensures the server is
 closed between tests and does not cause server in use errors.
 
-I have added eslint, and configured this to run pretest script. This has been automated to a degree
+I have added eslint, and configured this to run in a pretest script. This has been automated to a degree
 as linter will now run before tests - tests will not run until eslint has no errors.
 
-I have also updated git hooks - pre-commit file to run npm pretest at each commit.
+I have also updated git hooks - pre-commit file to run npm test at each commit.
 
 This runs linting and tests prior to each commit. I have done this to improve code quality and code commits as I cannot commit code with linting errors or failing tests.
 
@@ -102,7 +114,7 @@ reason to use postgres.
 
 
 I have attempted to isolate my tests as much as possible.
-Test suit saves to a test database which is cleared after test suite runs - may need to look at cleaning between each test
+Test suits uses a test database which is cleared after test suite runs - may need to look at cleaning between each test
 when testing GET routes for ratings (if move onto this)
 
 
@@ -113,7 +125,7 @@ Initial attempted failed - could not access mongourl
 
 Solved this by added encrypted version MONGOLAB_URI_TEST env variable to travis.yml
 
-Attempted deploy to Heroku. Set up mlab this tutorial
+Attempted deploy to Heroku. Set up mlab using this tutorial
 https://devcenter.heroku.com/articles/mongolab
 
 Heroku sets env MONGODB_URI - so amended across app.
@@ -125,7 +137,7 @@ Whilst automated testing, CI and CD were not part of MVP, I had a objective to a
 
 To improve automation I have added script to travis.yml file to push to Heroku after successful build. App now tested (specs / lint) and deployed on push to git.
 
-Keys in travis.yml are encrypted by travis
+Keys in travis.yml are encrypted by travis.
 
 Outstanding required tasks
 
