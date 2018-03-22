@@ -1,17 +1,7 @@
-const mongoose = require('mongoose');
 const Rating = require('../models/ratings');
 
 describe('Database tests', function(){
-  before(function (done){
-    mongoose.connect('mongodb://lgant:123@ds121299.mlab.com:21299/ft-test-db');
-    const db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error'));
-    db.once('open', function() {
-      console.log('We are connected to test database!');
-      done();
-    });
-  });
-  describe('Test database', function(){
+  describe('Test database - testing development model', function(){
     it('Can save a valid rating', function(done){
       var testRating = Rating({
         username: 'Test123',
@@ -54,11 +44,6 @@ describe('Database tests', function(){
         if(err) {throw err;}
         if(name.length === 0) {throw new Error('No data!');}
         done();
-      });
-    });
-    after(function(done){
-      mongoose.connection.db.dropDatabase(function(){
-        mongoose.connection.close(done);
       });
     });
   });

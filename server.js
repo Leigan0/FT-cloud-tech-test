@@ -1,10 +1,11 @@
-var express = require('express');
+const express = require('express');
 const apiRouter = require('./api');
 const ratings = require('./api/ratings');
 const server  = express();
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-var port = process.env.port || 3000;
+const port = process.env.port || 3000;
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
@@ -17,6 +18,22 @@ server.use(function(req, res){
 });
 
 server.set('view engine', 'pug');
+
+var getUrl = function(){
+  if (process.env.NODE_ENV == 'test') {
+    return process.env.MONGOLAB_URI_TEST;
+  } else {
+    return process.env.MONGOLAB_URI;
+  }
+};
+
+mongoose.connect(getUrl(), function (err){
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err );
+  } else {
+    console.log(`Connect established to ${getUrl()}`);
+  }
+});
 
 module.exports = {
   server,

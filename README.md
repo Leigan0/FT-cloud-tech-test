@@ -57,3 +57,8 @@ Once I researched a way to ensure linting was ran before each commit, I have als
 updated the git/hooks/pre-commit file to run my npm test script to ensure linting
 and testing is completed prior to every commit. This ensures I cannot commit if tests not passing
 linting errors not resolved.
+
+To persist data I have decided to use mongoose / mongodb. No requirement for relational database, so no
+reason to use postgres - have some experience mongoose.
+
+Need to set up environment variable MONGOLAB_URI_TEST and mlab test database
