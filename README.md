@@ -85,6 +85,8 @@ Degree of automated testing when pushed to git hub - travis ci confirms build pa
 Unable to commit without tests and linter passing
 Push to heroku autobuild with npm script.
 
+To improve automation I have added script to travis.yml file to push to heroku after successful build. App now tested (specs / lint) and deployed on push to git
+
 Need to add diagram as part of MVP of task.
 
 Points to improve
