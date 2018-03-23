@@ -74,6 +74,18 @@ After reading the specifications I came up with the following mvp.
 
 My initial plan is to make a simple version of the app to meet the above.
 
+I have decided to follow the Model-View-Controller architectural pattern, which divides
+the application into three interconnected parts, separating internal representations
+of information from the ways information is presented and accepted from the user.
+
+##### Application Architecture
+
+![alt text](https://i.imgur.com/HRae39I.jpg)
+
+##### Deployment Infrastructure
+
+![alt text](https://i.imgur.com/RoVe3TW.jpg)
+
 #### Technology decisions
 
 I have decided to write this with JavaScript/Node as I have some (limited) experience in this language
@@ -97,6 +109,7 @@ I made the decision to use Heroku due to time pressures, and I also want to be a
 Given more time I would gain further understanding and deploy to AWS.
 
 #### Testing & Implementation decisions
+
 
 I have completed unit tests for express routes. I have pulled server.listen out to serverStart
 so I do not have to set a port for testing, supertest will deal with this. This also ensures the server is
