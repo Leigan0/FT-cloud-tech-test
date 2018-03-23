@@ -113,13 +113,11 @@ I have also updated git hooks - pre-commit file to run npm test at each commit.
 This runs linting and tests prior to each commit. I have done this to improve code quality and code commits as I cannot commit code with linting errors or failing tests.
 
 To persist data I have decided to use mongoose / mongodb, through Mlab platform. No requirement for relational database, so no
-reason to use postgres.
-
+reason to use postgres. I have chosen mlab over mongodb locally for ease of use. Having data saved in cloud rather than local machine is more efficient and maintainable from any resource.
 
 I have attempted to isolate my tests as much as possible.
-Test suits uses a test database which is cleared after test suite runs - may need to look at cleaning between each test
-when testing GET routes for ratings (if move onto this)
-
+Test suites uses a test database which is cleared after test suite runs - may need to look at cleaning between each test
+when testing GET routes for ratings (if move onto this).
 
 I wanted to have CI build so my first step was to build using travis. I have not used this before for node projects
 or projects with mongodb.
@@ -142,7 +140,9 @@ To improve automation I have added script to travis.yml file to push to Heroku a
 
 Keys in travis.yml are encrypted by travis.
 
-Points to improve
+As I have met MVP I have chosen to implement some additional features. I also spent some time refactoring my tests to remove repeated code.
+
+Points to improve given more time
 
 - add feature tests
 - improve unit tests / isolation
