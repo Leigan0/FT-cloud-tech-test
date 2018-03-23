@@ -149,6 +149,14 @@ Points to improve given more time
 - optional features
 - refactoring?
 
+#### What it looks like
+
+![alt text](https://i.imgur.com/zXOCLNP.png)
+
+![alt text](https://i.imgur.com/s1A0BcJ.png)
+
+![alt text](https://i.imgur.com/4LaTyuv.png)
+
 ## What FT are looking for
 * Comfortable with code and infrastructure
 * How I solve problems
