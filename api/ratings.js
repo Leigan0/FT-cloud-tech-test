@@ -9,11 +9,18 @@ router.post('/new', (req, res) =>{
   });
   data.save()
     .then(rating => {
-      res.render('rating_confirmation',{username: rating.username, rating: rating.rating} );
+      res.render('rating_confirmation',{rating: rating} );
     })
     .catch(() =>{
       res.status(400).send('unable to save to database');
     });
 });
+
+router.get('/', (req, res) => {
+  Rating.find({}).then(ratings => {
+    res.render('ratings', { userRatings: ratings });
+  });
+});
+
 
 module.exports = router;

@@ -20,9 +20,16 @@ describe('FT Rating Collector', function(){
           expect(res.text).to.include('Welcome to Financial Times Website Rater');
           expect(res.text).to.include('Please rate our website');
           expect(res.text).to.include('<form action="/ratings/new" method="POST">');
-          expect(res.text).to.include('Username:<input type="text" name="username" value=""/>');
+          expect(res.text).to.include('Your name:<input type="text" name="username" value=""/>');
           expect(res.text).to.include('Rating:<input type="text" name="rating" value=""/>');
           expect(res.text).to.include('<input type="submit" value="Submit"/></form>');
+        });
+    });
+    it('displays a link to view ratings', () => {
+      return request(app)
+        .get('/')
+        .then(res => {
+          expect(res.text).to.include('a href="/ratings">Our Ratings !</a>');
         });
     });
   });

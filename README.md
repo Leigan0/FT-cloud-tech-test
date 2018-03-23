@@ -72,6 +72,8 @@ I have decided to follow the Model-View-Controller architectural pattern, which 
 the application into three interconnected parts, separating internal representations
 of information from the ways information is presented and accepted from the user.
 
+When building the controller, I have followed the RESTful API design pattern.
+
 ##### Application Architecture
 
 ![alt text](https://i.imgur.com/SB6Yutq.jpg)

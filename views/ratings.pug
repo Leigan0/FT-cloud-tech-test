@@ -1,0 +1,14 @@
+html
+  head
+    title FT ratings
+  body
+    h1 Our Ratings:
+
+    if userRatings.length > 0
+      ul
+        for rating in userRatings
+          li #{rating.username} rated us #{rating.rating}
+    else
+      h1 We have no ratings yet, please rate us!!
+
+a(href='/') Rate us !
