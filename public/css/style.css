@@ -1,9 +1,75 @@
-html {
-		font-family: FinancierDisplayWeb, sans-serif;
-	}
 h1 {
-		font-family: MetricWeb, serif;
-	}
+  display: block;
+  font-size: 2em;
+  text-align: center;
+}
+
 body {
+  font-family: MetricWeb,sans-serif;
   background-color: #FFF1E5;
+  border: 0;
+  margin: 16px auto;
+  display: block;
+}
+
+.o-header-services__ftlogo {
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?source=o-header&tint=%2333302E,%2333302E&format=svg);
+    width: 50%;
+    height: 100px;
+    display: block;
+    border: 0;
+    margin: 16px auto;
+    background-size: 100% 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+form {
+  margin-left: 35%;
+  margin-right: 35%;
+  font-size: 25px;
+  padding: 9px 9px 9px;
+}
+
+.o-buttons{
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+
+}
+.o-header-services__related-content-link{
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    text-align: center;
+    color: black;
+}
+
+.o-forms__select, .o-forms__text, .o-forms__textarea {
+    background-color: #fff;
+    color: #33302e;
+    border-color: #b3a9a0;
+    font-size: 25px;
+    margin-top: 12px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 380px;
+    min-height: 40px;
+    padding: 9px 9px 9px;
+    border: 1px solid #b3a9a0;
+    border-radius: 0;
+    background-clip: padding-box;
+    font-family: MetricWeb,sans-serif;
+    display: inline-block;
+    text-align: center;
 }

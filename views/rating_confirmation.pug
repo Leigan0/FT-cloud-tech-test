@@ -1,12 +1,11 @@
 html
   head
-  link(rel='stylesheet', type='text/css', href='/css/style.css')
+    include ./head.pug
+
+    header
+    include ./header.pug
   body
     h1 Thank you for submitting your review
     h1=rating.username
     h1 You rated us
     h1=rating.rating
-
-a(href='/') Return to Homepage </a>
-p
-a(href="/ratings") Our Ratings !</a>

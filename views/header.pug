@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+  title FT ratings
+  block styles
+    link(rel="stylesheet", href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-grid@^4.0.0,o-fonts@^1.4.0,colors")
+    link(rel="stylesheet", href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-buttons")
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+
+  block scripts
+    script(src="https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-grid@^4.0.0,o-fonts@^1.4.0")
+
+  body
+  block header
+    header.o-header-services(data-o-component='o-header')
+    .o-header-services__top.o-header-services__container
+      .o-header-services__ftlogo
+      .o-header-services__related-content
+        a.o-header-services__related-content-link(href='/ratings') Our Ratings!
+        a.o-header-services__related-content-link(href='/') Rate us!

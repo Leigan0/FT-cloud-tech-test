@@ -70,7 +70,7 @@ describe('Ratings routes', () => {
         return request(app)
           .get('/ratings')
           .then(res => {
-            expect(res.text).to.include('<a href="/">Rate us !</a');
+            expect(res.text).to.include('href="/">Rate us!');
           });
       });
       it('confirms no ratings available when no ratings in db', () => {

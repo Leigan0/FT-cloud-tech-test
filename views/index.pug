@@ -1,16 +1,12 @@
 html
-  head
-    title FT ratings
-    link(rel="stylesheet", href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-grid@^4.0.0,o-fonts@^1.4.0,colors")
-    link(rel="stylesheet", href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-buttons")
-    link(rel='stylesheet', type='text/css', href='/css/style.css')
-    script(src="https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-grid@^4.0.0,o-fonts@^1.4.0")
+  include ./head.pug
+
+  header
+  include ./header.pug
+
   body
-
-    h1 Welcome to Financial Times Website Rater
-    h1 Please rate our website
-
-    body
+    h1 Welcome to our website rater
+    h1 Please enter your rating
     form.o-forms(action='/ratings/new', method='POST')
       .o-forms
       label.o-forms__label(for='o-forms-standard') Your Name:
@@ -26,6 +22,3 @@ html
         option(value=1) Very Poor
       .o-forms
       button(class="o-buttons o-buttons--secondary" type='submit') Submit
-
-p
-a(href='/ratings') Our Ratings !

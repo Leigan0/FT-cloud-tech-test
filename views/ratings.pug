@@ -1,8 +1,10 @@
 html
   head
-    title FT ratings
-    head
-    link(rel='stylesheet', type='text/css', href='/css/style.css')
+  html
+    include ./head.pug
+
+    header
+    include ./header.pug
   body
     h1 Our Ratings:
 
@@ -12,5 +14,3 @@ html
           li #{rating.username} rated us #{rating.rating}
     else
       h1 We have no ratings yet, please rate us!!
-
-a(href='/') Rate us !
