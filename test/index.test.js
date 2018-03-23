@@ -19,10 +19,10 @@ describe('FT Rating Collector', function(){
         .then(res => {
           expect(res.text).to.include('Welcome to Financial Times Website Rater');
           expect(res.text).to.include('Please rate our website');
-          expect(res.text).to.include('<form action="/ratings/new" method="POST">');
-          expect(res.text).to.include('Your name:<input type="text" name="username" value=""/>');
-          expect(res.text).to.include('Rating:<input type="text" name="rating" value=""/>');
-          expect(res.text).to.include('<input type="submit" value="Submit"/></form>');
+          expect(res.text).to.include('<form class="o-forms" action="/ratings/new" method="POST"><div class="o-forms">');
+          expect(res.text).to.include('<input class="o-forms__text" id="o-forms-standard" type="text" name="username" required=""/>');
+          expect(res.text).to.include('<select class="o-forms__select" id="select-standard" type="text" name="rating">');
+          expect(res.text).to.include('type="submit">Submit</button></form>');
         });
     });
     it('displays a link to view ratings', () => {

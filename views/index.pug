@@ -1,20 +1,31 @@
 html
   head
     title FT ratings
+    link(rel="stylesheet", href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-grid@^4.0.0,o-fonts@^1.4.0,colors")
+    link(rel="stylesheet", href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-buttons")
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    script(src="https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-grid@^4.0.0,o-fonts@^1.4.0")
   body
+
     h1 Welcome to Financial Times Website Rater
     h1 Please rate our website
 
     body
-    form(action='/ratings/new', method='POST')
-      p
-      | Your name:
-      input(type='text', name='username', value='')
+    form.o-forms(action='/ratings/new', method='POST')
+      .o-forms
+      label.o-forms__label(for='o-forms-standard') Your Name:
+      input#o-forms-standard.o-forms__text(type='text', name='username',required='')
       |
-      | Rating:
-      input(type='text', name='rating', value='')
-      |
-      input(type='submit', value='Submit')
-      |
+      .o-forms
+      label.o-forms__label(for='select-standard') Your Rating:
+      select#select-standard.o-forms__select(type='text', name='rating')
+        option(value=5, selected='') Very Good
+        option(value=4) Good
+        option(value=3) OK
+        option(value=2) Poor
+        option(value=1) Very Poor
+      .o-forms
+      button(class="o-buttons o-buttons--secondary" type='submit') Submit
 
+p
 a(href='/ratings') Our Ratings !

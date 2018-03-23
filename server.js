@@ -12,6 +12,7 @@ server.use(bodyParser.json());
 
 server.use('/', apiRouter);
 server.use('/ratings', ratings);
+server.use(express.static(__dirname + '/public'));
 
 server.use(function(req, res){
   res.status(404).send({url: req.originalUrl + ' not found'});
