@@ -7,21 +7,15 @@
 * Website asks for and stores a simple rating score for using ft
 * Diagram of site architecture show key components
 
-### Optional
-* Templated infrastructure as code
-* Automated testing
-* Origami Components
-* The ability to view the ratings / results
-
 ### Usage
 
 ** Requirements to run **
  - Node
  - NPM
 
-The project requires the use of a database. Prior to running the project you will require a  [mlab](https://mlab.com) account and database. The database connection has been created through environmental variables. To run tests and the app you must first set up a test & development database and run the following commands in the terminal.
+The project requires the use of a database. Prior to running the project you will require a [mlab](https://mlab.com) account and database. The database connection has been created through environmental variables when run locally. To run tests and the app you must first set up a test & development database and run the following commands in the terminal.
 
-For more information about mlab how to set it up for your own projects visit this [tutorial](https://leigan0.gitbooks.io/team-glow/content/Mongo/Mlab-set-up.html) I wrote about it.
+For more information about mlab and or for a guide on how to set it up for your own projects visit this [tutorial](https://leigan0.gitbooks.io/team-glow/content/Mongo/Mlab-set-up.html) I wrote about it.
 
 ```
 export MONGOLAB_URI_TEST='your mlab connection details'
@@ -41,19 +35,6 @@ To check test coverage
 - npm run coverage
 
 Or visit on [Heroku](https://ft-tech-test.herokuapp.com/)
-
-### Technologies used
-
-* Express
-* Node.Js
-* Javascript
-* Pug
-* Heroku
-* Travis
-* Mocha
-* Chai
-* Supertest
-* Istanbul
 
 ## My approach
 
@@ -81,6 +62,19 @@ When building the controller, I have followed the RESTful API design pattern.
 ##### Deployment Infrastructure
 
 ![alt text](https://i.imgur.com/ObPLBhR.jpg)
+
+### Technologies used
+
+* Express
+* Node.Js
+* Javascript
+* Pug
+* Heroku
+* Travis
+* Mocha
+* Chai
+* Supertest
+* Istanbul
 
 #### Technology decisions
 
@@ -148,10 +142,6 @@ To improve automation I have added script to travis.yml file to push to Heroku a
 
 Keys in travis.yml are encrypted by travis.
 
-Outstanding required tasks
-
-- Diagram of site architecture
-
 Points to improve
 
 - add feature tests
@@ -164,3 +154,9 @@ Points to improve
 * How I solve problems
 * Code
 * Infrastructure design
+
+### Optional further features
+* Templated infrastructure as code
+* Automated testing
+* Origami Components
+* The ability to view the ratings / results
