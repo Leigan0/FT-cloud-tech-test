@@ -2,12 +2,6 @@
 
 [![Build Status](https://travis-ci.org/Leigan0/test.svg?branch=master)](https://travis-ci.org/Leigan0/test)
 
-## What FT are looking for
-* Comfortable with code and infrastructure
-* How I solve problems
-* Code
-* Infrastructure design
-
 ## Exercise breakdown
 * Build a website hosted in the cloud(AWS,Google, Heroku)
 * Website asks for and stores a simple rating score for using ft
@@ -80,11 +74,11 @@ of information from the ways information is presented and accepted from the user
 
 ##### Application Architecture
 
-![alt text](https://i.imgur.com/HRae39I.jpg)
+![alt text](https://i.imgur.com/SB6Yutq.jpg)
 
 ##### Deployment Infrastructure
 
-![alt text](https://i.imgur.com/RoVe3TW.jpg)
+![alt text](https://i.imgur.com/ObPLBhR.jpg)
 
 #### Technology decisions
 
@@ -162,3 +156,9 @@ Points to improve
 - improve unit tests / isolation
 - optional features
 - refactoring?
+
+## What FT are looking for
+* Comfortable with code and infrastructure
+* How I solve problems
+* Code
+* Infrastructure design
