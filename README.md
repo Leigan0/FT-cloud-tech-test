@@ -50,10 +50,13 @@ After reading the specifications I came up with the following mvp.
 My initial plan is to make a simple version of the app to meet the above.
 
 I have decided to follow the Model-View-Controller architectural pattern, which divides
-the application into three interconnected parts, separating internal representations
-of information from the ways information is presented and accepted from the user.
+the application into three interconnected parts, allowing separation of concerns. This pattern
+separates internal representations of information from the way information is presented and accepted
+from the user
 
-When building the controller, I have followed the RESTful API design pattern.
+When building the app, I have also followed the RESTful API design pattern.
+
+To maintain readabilty and extendability I have separated by controller into ratings and index files.
 
 ##### Application Architecture
 
@@ -63,33 +66,21 @@ When building the controller, I have followed the RESTful API design pattern.
 
 ![alt text](https://i.imgur.com/ObPLBhR.jpg)
 
-### Technologies used
-
-* Express
-* Node.Js
-* Javascript
-* Pug
-* Heroku
-* Travis
-* Mocha
-* Chai
-* Supertest
-* Istanbul
-
 #### Technology decisions
 
-I have decided to write this with JavaScript/Node as I have some (limited) experience in this language
-and as per the spec this language is commonly used at FT.
+I have decided to write this with JavaScript/Node primarily as this is the the language most commonly used at FT.
+I have some (limited) experience in this language and framework from my final project, but I am also keen to gain
+more knowledge and understanding of this framework.
 
 I am using Express for my app routing, and Node.js to allow me to use JS in the front and backend.
 
-Supertest: Allows me to test API
+Supertest: Allows me to test API.
 
-Mocha: Test framework that runs in the browser and on Node.js
+Mocha: Test framework that runs in the browser and on Node.js. I have not used this tech before to test a application I have written, however I think this will be a good learning point.
 
-Chai: Allows should, expect and asserts matchers
+Chai: Allows should, expect and asserts matchers. Whilst I have not used this tech before, adding expect matchers makes the syntax more readable, so I have chosen to use this also.
 
-Istanbul: Test coverage
+Istanbul: I wanted to add a test coverage to allow some measure of my testing. Whilst I know it is not a strong indicator of test quality, it allows some insight, and highlights areas for consideration.
 
 I will use Heroku to host the website. I originally intended to use AWS however I have not had time
 to fully understand how to deploy to AWS, so I have used Heroku.
@@ -106,56 +97,73 @@ so I do not have to set a port for testing, supertest will deal with this. This 
 closed between tests and does not cause server in use errors.
 
 I have added eslint, and configured this to run in a pretest script. This has been automated to a degree
-as linter will now run before tests - tests will not run until eslint has no errors.
+as linter will now run before tests - tests will not run until eslint has no errors. I have done this to improve my JavaScript code base.
 
 I have also updated git hooks - pre-commit file to run npm test at each commit.
 
 This runs linting and tests prior to each commit. I have done this to improve code quality and code commits as I cannot commit code with linting errors or failing tests.
 
 To persist data I have decided to use mongoose / mongodb, through Mlab platform. No requirement for relational database, so no
-reason to use postgres. I have chosen mlab over mongodb locally for ease of use. Having data saved in cloud rather than local machine is more efficient and maintainable from any resource.
+reason to use postgres. I have chosen mlab over mongodb locally for ease of use and scalability. Having data saved in cloud rather than local machine is more efficient and maintainable from any resource.
 
 I have attempted to isolate my tests as much as possible.
-Test suites uses a test database which is cleared after test suite runs - may need to look at cleaning between each test
-when testing GET routes for ratings (if move onto this).
+
+The test suite uses a test database which is cleared after test suite runs - may need to look at cleaning between each test
+when testing GET routes for ratings (if move onto this). I did not implement this straight away as it was not required and did not affect my tests already written.
 
 I wanted to have CI build so my first step was to build using travis. I have not used this before for node projects
 or projects with mongodb.
 
-Initial attempted failed - could not access mongourl
+Initial attempted failed - could not access mongourl. I Solved this by adding encrypted version MONGOLAB_URI_TEST env variable to travis.yml. I then attempted deploy to Heroku. Set up mlab using this tutorial https://devcenter.heroku.com/articles/mongolab
 
-Solved this by added encrypted version MONGOLAB_URI_TEST env variable to travis.yml
-
-Attempted deploy to Heroku. Set up mlab using this tutorial
-https://devcenter.heroku.com/articles/mongolab
-
-Heroku sets env MONGODB_URI - so amended across app.
-
-App deploys to Heroku - https://ft-tech-test.herokuapp.com/
+Heroku sets env MONGODB_URI - so amended across app. App deploys to Heroku - https://ft-tech-test.herokuapp.com/
 MVP met.
 
-Whilst automated testing, CI and CD were not part of MVP, I had a objective to achieve this.
-
-To improve automation I have added script to travis.yml file to push to Heroku after successful build. App now tested (specs / lint) and deployed on push to git.
-
-Keys in travis.yml are encrypted by travis.
+Whilst automated testing, CI/CD were not part of MVP, I had a objective to achieve this for my learning.  To improve automation I have added script to travis.yml file to push to Heroku after successful build. App now tested (specs / lint) and deployed on push to git. Keys in travis.yml are encrypted by travis.
 
 As I have met MVP I have chosen to implement some additional features. I also spent some time refactoring my tests to remove repeated code.
 
-Points to improve given more time
 
-- add feature tests
-- improve unit tests / isolation
+### Next steps
+
+If I had more time my next considerations points would be:
+
+- add feature tests, the application is not featured tested - tests which recreated user interaction.
+  - I would need to research how to write feature tests for express app
+
+- improve unit tests / isolation - I think my testing could be improved
+  - To do this I would spend more time researching testing techniques - google, mocha docs, stack overflow
+  - Search for tutorials for examples on how to isolate / unit test express apps
+  - Search Github for examples
+  - Research options for mocking database calls / api calls  within tests - sinon?
+
 - optional features
-- refactoring?
+  - Learn more about code as infrastructure
+  - aws
+  - Research tools FT use
+
+- refactoring
 
 #### What it looks like
 
-![alt text](https://i.imgur.com/zXOCLNP.png)
+![alt text](https://i.imgur.com/x7YImWh.png)
 
-![alt text](https://i.imgur.com/s1A0BcJ.png)
+![alt text](https://i.imgur.com/P7Q1CRZ.png)
 
-![alt text](https://i.imgur.com/4LaTyuv.png)
+![alt text](https://i.imgur.com/oTnjk1z.png)
+
+### Technologies used
+
+* Express
+* Node.Js
+* Javascript
+* Pug
+* Heroku
+* Travis
+* Mocha
+* Chai
+* Supertest
+* Istanbul
 
 ## What FT are looking for
 * Comfortable with code and infrastructure
@@ -165,6 +173,6 @@ Points to improve given more time
 
 ### Optional further features
 * Templated infrastructure as code
-* Automated testing
-* Origami Components
-* The ability to view the ratings / results
+* Automated testing - attempted
+* Origami Components - attempted
+* The ability to view the ratings / results - done
