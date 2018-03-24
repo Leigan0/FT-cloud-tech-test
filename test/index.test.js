@@ -21,7 +21,7 @@ describe('FT Rating Collector', function(){
           expect(res.text).to.include('Please enter your rating');
           expect(res.text).to.include('<form class="o-forms" action="/ratings/new" method="POST"><div class="o-forms">');
           expect(res.text).to.include('input class="o-forms__text" id="o-forms-standard" type="text" name="username" required="">');
-          expect(res.text).to.include('<select class="o-forms__select" id="select-standard" type="text" name="rating">');
+          expect(res.text).to.include('<select class="o-forms__select" id="select-standard" type="text" name="rating" required="">');
           expect(res.text).to.include('type="submit">Submit</button></form>');
         });
     });

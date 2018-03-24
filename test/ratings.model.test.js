@@ -23,7 +23,7 @@ describe('Database tests', function(){
       });
       wrongSave.save(shouldRaiseError);
     });
-    it('Will not save incorrect format to database - username', function() {
+    it('Will not save incorrect format to database - rating', function() {
       var wrongSave = Rating({
         username: 'Test123',
         notRating: 1
