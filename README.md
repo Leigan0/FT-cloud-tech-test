@@ -146,11 +146,11 @@ If I had more time my next considerations points would be:
 
 #### What it looks like
 
-![alt text](https://i.imgur.com/x7YImWh.png)
+![alt text](https://i.imgur.com/mMtusrY.png)
 
-![alt text](https://i.imgur.com/P7Q1CRZ.png)
+![alt text](https://i.imgur.com/rNE9KIG.png)
 
-![alt text](https://i.imgur.com/oTnjk1z.png)
+![alt text](https://i.imgur.com/GtzI2qL.png)
 
 ### Technologies used
 
