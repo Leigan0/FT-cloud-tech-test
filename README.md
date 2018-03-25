@@ -51,7 +51,7 @@ Or visit on [Heroku](https://ft-tech-test.herokuapp.com/)
 
 ## My approach
 
-After reading the specifications I came up with the following mvp.
+After reading the specifications I came up with the following mvp. I did this to break the exercise its small challenges / features. 
 
 #### MVP
 
@@ -60,7 +60,7 @@ After reading the specifications I came up with the following mvp.
 * hosted on cloud
 * Diagram of infrastructure
 
-My initial plan is to make a simple version of the app to meet the above.
+My initial plan is to make a simple version of the app to meet the above. I will break each feature into smaller problems and implement the feature following the TDD cycle approach. 
 
 I have decided to follow the Model-View-Controller architectural pattern, which divides
 the application into three interconnected parts, allowing separation of concerns. This pattern
