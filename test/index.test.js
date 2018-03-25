@@ -32,5 +32,12 @@ describe('FT Rating Collector', function(){
           expect(res.text).to.include('href="/ratings">Our Ratings');
         });
     });
+    it('displays a link to FT homepage', () => {
+      return request(app)
+        .get('/')
+        .then(res => {
+          expect(res.text).to.include('href="https://www.ft.com/?edition=uk">Home');
+        });
+    });
   });
 });

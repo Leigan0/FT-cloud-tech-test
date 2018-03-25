@@ -1,5 +1,5 @@
 body {
-  font-family: MetricWeb,sans-serif;
+  font-family: FinancierDisplayWeb, serif;
   background-color: #FFF1E5;
   border: 0;
   margin: 16px auto;
@@ -7,6 +7,16 @@ body {
   text-align: center;
 }
 
+h1 {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-weight: 400;
+}
 .o-header-services__ftlogo {
     background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?source=o-header&tint=%2333302E,%2333302E&format=svg);
     width: 50%;
@@ -27,12 +37,18 @@ form {
 
 ul {
   list-style-type: none;
+  font-family: MetricWeb, sans-serif;
 }
 li {
     font-size: 25px;
     font-style: italic;
+    text-align: left;
+    margin: auto;
+    width: 200px;
+    padding-bottom: 20px;
 }
 .o-header-services__related-content-link{
+    font-family: MetricWeb,sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
