@@ -132,7 +132,7 @@ If I had more time my next considerations points would be:
   - Search for tutorials for examples on how to isolate / unit test express apps
   - Search Github for examples
   - Research options for mocking database calls / api calls  within tests - sinon?
-  
+
 - Data Validation
   - Data being added to the database has limited validation at the moment. I would look to improve this to protect data       integrity
 
