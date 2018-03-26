@@ -1,6 +1,6 @@
 # FT Cloud Engineer Technical Exercise
 
-[![Build Status](https://travis-ci.org/Leigan0/test.svg?branch=master)](https://travis-ci.org/Leigan0/test)
+https://travis-ci.org/Leigan0/FT-cloud-tech-test.svg?branch=master
 
 ## Exercise breakdown
 * Build a website hosted in the cloud(AWS,Google, Heroku)
